@@ -1,4 +1,4 @@
-package at.dbp.klausur.models;
+package models;
 
 
 public class KlausurProjekte {
@@ -24,16 +24,36 @@ public class KlausurProjekte {
         Laufzeit = laufzeit;
     }
 
+
+
+    public KlausurProjekte(String projektbezeichnung, String projekttyp, double budget, int laufzeit) {
+        Projektbezeichnung = projektbezeichnung;
+        Projekttyp = projekttyp;
+        Budget = budget;
+        Laufzeit = laufzeit;
+    }
+
     @Override
     public String toString() {
-        return "KlausurProjekte{" +
-                "ProjektId=" + ProjektId +
-                ", Projektbezeichnung='" + Projektbezeichnung + '\'' +
-                ", Projekttyp='" + Projekttyp + '\'' +
-                ", Budget=" + Budget +
-                ", Laufzeit=" + Laufzeit +
-                '}';
+        return "KlausurProjekte " +
+                " ProjektId: " + formatString(String.valueOf(ProjektId), 5) +
+                " Projektbezeichnung: " + formatString(Projektbezeichnung, 35) +
+                " Projekttyp: " + formatString(Projekttyp, 15) +
+                " Budget: " + formatString(String.valueOf(Budget), 10) +
+                " Laufzeit: " + Laufzeit;
     }
+    private String formatString(String input, int length) {
+        return String.format("%-" + length + "s", input);
+    }
+//    @Override
+//    public String toString() {
+//        return "KlausurProjekte " +
+//                " ProjektId: " + ProjektId +
+//                " Projektbezeichnung: " + Projektbezeichnung +
+//                " Projekttyp: " + Projekttyp +
+//                " Budget: " + Budget +
+//                " Laufzeit: " + Laufzeit;
+//    }
 
     public void setProjektId(int projektId) {
         ProjektId = projektId;

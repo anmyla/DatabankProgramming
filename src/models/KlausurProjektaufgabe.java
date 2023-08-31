@@ -1,6 +1,6 @@
 package models;
 
-public class KlausurProjektaufgaben {
+public class KlausurProjektaufgabe {
     private int projektAufgabeID;
     private int projektID;
     private String aufgabenbezeichnung;
@@ -8,11 +8,16 @@ public class KlausurProjektaufgaben {
 
 
     // Default constructor
-    public KlausurProjektaufgaben() {
-
+    public KlausurProjektaufgabe() {
     }
 
-    public KlausurProjektaufgaben(int projektAufgabeID, int projektID, String aufgabenbezeichnung, int aufwandInStunden) {
+    public KlausurProjektaufgabe(int projektID, String aufgabenbezeichnung, int aufwandInStunden) {
+        this.projektID = projektID;
+        this.aufgabenbezeichnung = aufgabenbezeichnung;
+        this.aufwandInStunden = aufwandInStunden;
+    }
+
+    public KlausurProjektaufgabe(int projektAufgabeID, int projektID, String aufgabenbezeichnung, int aufwandInStunden) {
         this.projektAufgabeID = projektAufgabeID;
         this.projektID = projektID;
         this.aufgabenbezeichnung = aufgabenbezeichnung;
@@ -54,11 +59,10 @@ public class KlausurProjektaufgaben {
 
     @Override
     public String toString() {
-        return "KlausurProjektaufgabe [ " +
-                "ProjektAufgabeID: " + projektAufgabeID +
-                "ProjektID: " + projektID +
-                "Aufgabenbezeichnung: " + aufgabenbezeichnung +
-                "AufwandInStunden: " + aufwandInStunden +
-                " ]";
+        return "KlausurProjektaufgabe   " +
+                " ProjektAufgabeID: " + projektAufgabeID +
+                " ProjektID: " + projektID +
+                " Aufgabenbezeichnung: " + aufgabenbezeichnung +
+                " AufwandInStunden: " + aufwandInStunden;
     }
 }
