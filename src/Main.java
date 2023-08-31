@@ -6,15 +6,14 @@ import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) {
 
-        //two lines are just for display purposes
+        //Following 2 lines are just for display purposes
         String SUNNY = "\u001B[38;2;204;204;102m";
         String RESET = "\u001B[0m";
 
-        //-------------------------------------------------------------------------------
+        //Aufgabe 1
+        System.out.println(SUNNY + "\nEstablish a connection:" + RESET);
         String databasePath = "src/database/DBPKlausurAriagaNagl.db";
         DBPKlausurHelper helper = new DBPKlausurHelper(databasePath);
-
-        System.out.println(SUNNY + "\nEstablish a connection:" + RESET);
         helper.connect(databasePath);
 
         //Aufgabe 2, 2a
